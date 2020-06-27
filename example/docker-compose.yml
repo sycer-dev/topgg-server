@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  rabbit:
+    image: rabbitmq:management
+    restart: unless-stopped
+    environment:
+      - RABBITMQ_DEFAULT_USER=fyko
+      - RABBITMQ_DEFAULT_PASS=doctordoctor
+    ports: 
+      - "5672:5672"
+      - "15672:15672"
+    expose: 
+      - "5672" # main port
+      - "15672" # management panel
